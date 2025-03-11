@@ -1,26 +1,34 @@
 import React from "react";
 import cardimg1 from "../assets/img/card-img-1.png";
+import cardimg2 from "../assets/img/card-img-2.png";
+import cardimg3 from "../assets/img/card-img-3.png";
+import { Card } from "./Card";
 
 export const Cards = () => {
+  const objCards = [
+    {
+      img: cardimg1,
+      title: "Fish",
+    },
+    {
+      img: cardimg2,
+      title: "Fish",
+    },
+    {
+      img: cardimg3,
+      title: "Fish",
+    },
+  ];
   return (
     <section className="cards">
-      {/* <div class="cards-container"> */}
-      <div className="card">
-        <img src={cardimg1} alt=""></img>
-        <h3 className="card-title">fish</h3>
-        <button className="card-btn">Order Now</button>
+      <h1 className="section-header">Popular Meals</h1>
+      <div className="row">
+        {objCards.map((item, i) => (
+          <div key={i} className="col-lg-4 col-md-6 col-sm-12">
+            <Card img={item.img} title={item.title}></Card>;
+          </div>
+        ))}
       </div>
-      <div className="card">
-        <img src={cardimg1} alt=""></img>
-        <h3 className="card-title">fish</h3>
-        <button className="card-btn">Order Now</button>
-      </div>
-      <div className="card">
-        <img src={cardimg1} alt=""></img>
-        <h3 className="card-title">fish</h3>
-        <button className="card-btn">Order Now</button>
-      </div>
-      {/* </div> */}
     </section>
   );
 };
